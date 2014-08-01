@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+   <form method="post" >
+       <span>Enter your name</span>
+       <input type="text" name="name">
+       <button type="submit">Submit</button>
+   </form>
+  <ul id="result">
+
+  </ul>
+   <script>
+       var result = <%- JSON.stringify(result) %>;
+       var html = '';
+           for (var i in result) {
+               html += '<li>' + result[i] + '</li>'
+           }
+       document.getElementById('result').innerHTML = html;
+   </script>
+  </body>
+</html>

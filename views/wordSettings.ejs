@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+        <html>
+<head></head>
+<body>
+
+<h1><%= message %></h1>
+
+<form method="post">
+    <select name ="letter" id = 'selectBox'>
+        <% for(var i in words) { %>
+            <option><%= i %> </option>
+        <% } %>
+    </select>
+    <input type = text name="word">
+    <input type ='submit'>
+</form>
+<ul id = wordList>
+
+</ul>
+
+<script>
+    function showWords () {
+        var html = '';
+        for(var word in words[selectBox.value]){
+            if (words[selectBox.value][word]) {
+                html += '<li>' + words[selectBox.value][word] + '</li>'
+            }
+
+        }
+        document.getElementById('wordList').innerHTML = html;
+    }
+     var words = <%- JSON.stringify(words) %>;
+     var selectBox = document.getElementById('selectBox');
+     selectBox.onchange = function(){
+         showWords();
+     }
+    window.onload = function(){
+        showWords();
+    }
+
+</script>
+</body>
+        </html>
