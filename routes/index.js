@@ -59,11 +59,11 @@ router.post('/wordSettings', function (req, res) {
             resArray.push(word);
             var object = {};
             object[letter] = resArray;
-            //wordsDB[letter] = resArray;
+            wordsDB[letter] = resArray;
 
             message = 'Successfully added';
 
-            words.update({}, {$set: object}, function (err, res) {
+            words.update({}, {$set: wordsDB}, function (err, res) {
 
             });
 
@@ -71,7 +71,7 @@ router.post('/wordSettings', function (req, res) {
         } else if (!message) {
             message = 'Entered word must start with given letter'
         }
-        res.render('wordSettings', {words: object, message: message });
+        res.render('wordSettings', {words: wordsDB, message: message });
     });
 });
 
