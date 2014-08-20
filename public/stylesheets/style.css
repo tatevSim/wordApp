@@ -1,8 +1,28 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+/*body {*/
+  /*padding: 50px;*/
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+/*}*/
 
-a {
-  color: #00B7FF;
-}
+/*a {*/
+  /*color: #00B7FF;*/
+/*}*/
+/*.usersList{*/
+    /*width: 612px;*/
+    /*}*/
+/*.users{*/
+    /*list-style: none;*/
+    /*padding-left: 0;*/
+/*}*/
+
+/*.user{*/
+    /*float: left;*/
+    /*margin: 2px 0 2px 0;*/
+    /*border:2px groove;*/
+    /*width: 200px;*/
+    /*overflow: auto;*/
+
+/*}*/
+
+/*.userColor{*/
+    /*background-color: lightgoldenrodyellow;*/
+/*}*/

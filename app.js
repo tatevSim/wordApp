@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var db = require('./db');
+
 var routes = require('./routes/index');
 
 var app = express();
@@ -20,7 +22,21 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.set('db',db);
+
 app.use('/', routes);
+
+// Initializing database for first use
+var words = db.model('words');
+words.find({},function(err, docs){
+    if(docs.length == 0 ){
+        words({}).save(function(){
+            console.log('Database Created');
+        })
+    }
+})
+
 
 
 /// catch 404 and forward to error handler
